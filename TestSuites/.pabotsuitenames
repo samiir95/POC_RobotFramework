@@ -1,0 +1,7 @@
+datasources:3d67bba05141d5c758e8d9c0a21ec07f9651c235
+commandlineoptions:690611fc3044860a7590e414b4bf0214ad18c978
+suitesfrom:no-suites-from-option
+file:053137ba7515f4a2e563a3c36c17e19293f0fcf6
+--test Suites.Login TestSuite.Test Case SignIn with Valid Credentials
+--test Suites.Login TestSuite2.Test Case SignIn with Valid Credentials
+--test Suites.Login TestSuite2.Test Case SignIn with Valid Credentials2
