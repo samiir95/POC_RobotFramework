@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Keywords/Keywords_Login.robot
 Resource    ../Keywords/Webdriver_Manager.robot
-Library             AutoItLibrary
+Library          AutoItLibrary
 Library    XML
 Test Setup          Open Chrome Browser
 Test Teardown       Close Browser
@@ -11,10 +11,15 @@ Test case create verification request as a candidate user
     Open Sign In Page
     User SignIn    ghadeer_candidite@inboxbear.com    Ghadeerk@12    000000
     Wait Until Element Is Visible    //div[text()=' Your requests ']
+    ${currentUrl}   Execute Javascript  return window.location.href
+    Log     ${currentUrl}
+    Should Be True      "dashboard" in """${currentUrl}"""
     Click Element    //span[text()= ' START VERIFICATION ' or text() = ' START REQUEST ']
     Wait Until Element Is Visible    //label[text()= 'State']/following-sibling::input
     Clear Element Text    //label[text()= 'State']/following-sibling::input
     Input Text    //label[text()= 'State']/following-sibling::input    Saudi Arabia
+    ${reviewDocument_Btn}  Page Should Contain Element   //span[text() = ' Review the document ']
+    Log    ${reviewDocument_Btn}
     Click Element    //span[text() = ' Review the document ']
     Wait Until Element Is Visible    //label[text()= 'Type your name here']/following-sibling::input
     Scroll Element Into View    //label[text()= 'Type your name here']/following-sibling::input

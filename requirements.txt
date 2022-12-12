@@ -1,0 +1,10 @@
+Selenium
+robotframework
+Robotframework-SeleniumLibrary
+Robotframework-DatabaseLibrary
+robotframework-pabot
+robotframework-jsonlibrary
+robotframework-autoitlibrary
+allure-robotframework
+RESTinstance
+robotframework-appiumlibrary

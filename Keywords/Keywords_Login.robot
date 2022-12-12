@@ -3,7 +3,6 @@ Resource    ../POM/Home_Page.robot
 Resource    ../POM/Login_Page.robot
 
 
-
 *** Keywords ***
 Open Sign In Page
     Get Home Page Logo

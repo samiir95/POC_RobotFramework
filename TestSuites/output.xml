@@ -1,608 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.8.0 on win32)" generated="20221127 12:17:36.560" rpa="false" schemaversion="3">
-<suite id="s1" name="VerificationRequest TestSuite" source="C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites\VerificationRequest_TestSuite.robot">
-<test id="s1-t1" name="Test case create verification request as a candidate user" line="10">
-<kw name="Open Chrome Browser" library="Webdriver_Manager" type="SETUP">
-<kw name="Set Common Global Variables" library="Variables">
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${URL}</arg>
-<arg>https://spa.qvp.uat.devops.takamol.support/home</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221127 12:17:36.992" level="INFO">${URL} = https://spa.qvp.uat.devops.takamol.support/home</msg>
-<status status="PASS" starttime="20221127 12:17:36.991" endtime="20221127 12:17:36.992"/>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221209 22:15:15.830" rpa="false" schemaversion="3">
+<suite id="s1" name="Appium" source="C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites\appium.robot">
+<test id="s1-t1" name="Should send keys to search box and then check the value" line="12">
+<kw name="Open Test Application">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>app=${ANDROID_APP}</arg>
+<arg>appPackage=io.appium.android.apis</arg>
+<arg>appActivity=.app.SearchInvoke</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221209 22:15:22.993" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20221209 22:15:22.992" endtime="20221209 22:15:23.028"/>
 </kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${Explicit_Timeout}</arg>
-<arg>60s</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221127 12:17:36.993" level="INFO">${Explicit_Timeout} = 60s</msg>
-<status status="PASS" starttime="20221127 12:17:36.992" endtime="20221127 12:17:36.993"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:36.991" endtime="20221127 12:17:36.993"/>
-</kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<arg>browser=Firefox</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221127 12:17:36.994" level="INFO">Opening browser 'Firefox' to base url 'https://spa.qvp.uat.devops.takamol.support/home'.</msg>
-<msg timestamp="20221127 12:17:36.995" level="INFO">Firefox driver log is always forced to to: C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites\geckodriver-7.log</msg>
-<status status="PASS" starttime="20221127 12:17:36.993" endtime="20221127 12:17:53.457"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221127 12:17:53.458" endtime="20221127 12:17:53.468"/>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>0.5s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20221127 12:17:53.468" endtime="20221127 12:17:53.469"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:36.991" endtime="20221127 12:17:53.470"/>
-</kw>
-<kw name="Open Sign In Page" library="Keywords_Login">
-<kw name="Get Home Page Logo" library="Home_Page">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${home_Logo}</arg>
-<arg>${Explicit_Timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221127 12:17:53.472" endtime="20221127 12:17:53.993"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:53.471" endtime="20221127 12:17:53.994"/>
-</kw>
-<kw name="Click Login Button in Home Page" library="Home_Page">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${login_Btn}</arg>
-<arg>${Explicit_Timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221127 12:17:53.997" endtime="20221127 12:17:55.672"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${login_Btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221127 12:17:55.676" level="INFO">Clicking element '(//*[contains(@href,'/candidate/login')])[1]'.</msg>
-<status status="PASS" starttime="20221127 12:17:55.673" endtime="20221127 12:17:57.153"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:53.995" endtime="20221127 12:17:57.154"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:53.471" endtime="20221127 12:17:57.155"/>
-</kw>
-<kw name="User SignIn" library="Keywords_Login">
-<arg>ghadeer_candidite@inboxbear.com</arg>
-<arg>Ghadeerk@12</arg>
-<arg>000000</arg>
-<kw name="Insert Text in Email" library="Login_Page">
-<arg>${Username}</arg>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${Email_Txt}</arg>
-<arg>${Explicit_TimeOut}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221127 12:17:57.160" endtime="20221127 12:17:58.724"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${Email_Txt}</arg>
-<arg>${UserMail_Value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221127 12:17:58.727" level="INFO">Typing text 'ghadeer_candidite@inboxbear.com' into text field '//input[contains(@type,'email')]'.</msg>
-<status status="PASS" starttime="20221127 12:17:58.725" endtime="20221127 12:18:00.396"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:57.158" endtime="20221127 12:18:00.398"/>
-</kw>
-<kw name="Insert Text in Password" library="Login_Page">
-<arg>${Password}</arg>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${password_Txt}</arg>
-<arg>${Explicit_TimeOut}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221127 12:18:00.400" endtime="20221127 12:18:01.961"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${password_Txt}</arg>
-<arg>${Password_Value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:01.966" level="INFO">Typing text 'Ghadeerk@12' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20221127 12:18:01.962" endtime="20221127 12:18:03.615"/>
-</kw>
-<status status="PASS" starttime="20221127 12:18:00.398" endtime="20221127 12:18:03.616"/>
-</kw>
-<kw name="Click Continue Button" library="Login_Page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${Continue_Btn}</arg>
-<arg>${Explicit_TimeOut}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221127 12:18:03.618" endtime="20221127 12:18:04.911"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Continue_Btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:04.913" level="INFO">Clicking element '//span[contains(text(),'Continue')]'.</msg>
-<status status="PASS" starttime="20221127 12:18:04.912" endtime="20221127 12:18:06.196"/>
-</kw>
-<status status="PASS" starttime="20221127 12:18:03.617" endtime="20221127 12:18:06.198"/>
-</kw>
-<kw name="Insert Text in OTP" library="Login_Page">
-<arg>${OTP}</arg>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${OTP_Txt}</arg>
-<arg>${Explicit_TimeOut}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20221127 12:18:06.201" endtime="20221127 12:18:07.751"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${OTP_Txt}</arg>
-<arg>${OTP_Value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:07.752" level="INFO">Typing text '000000' into text field '//input[contains(@autofocus,'autofocus')]'.</msg>
-<status status="PASS" starttime="20221127 12:18:07.751" endtime="20221127 12:18:09.327"/>
-</kw>
-<status status="PASS" starttime="20221127 12:18:06.198" endtime="20221127 12:18:09.327"/>
-</kw>
-<kw name="Verify User Logged In" library="Login_Page">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${VerificationRequest_Btn}</arg>
-<arg>${Explicit_TimeOut}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20221127 12:18:09.329" endtime="20221127 12:18:12.631"/>
-</kw>
-<status status="PASS" starttime="20221127 12:18:09.328" endtime="20221127 12:18:12.632"/>
-</kw>
-<status status="PASS" starttime="20221127 12:17:57.156" endtime="20221127 12:18:12.633"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//div[text()=' Your requests ']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221127 12:18:12.634" endtime="20221127 12:18:13.681"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text()= ' START VERIFICATION ' or text() = ' START REQUEST ']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:13.681" level="INFO">Clicking element '//span[text()= ' START VERIFICATION ' or text() = ' START REQUEST ']'.</msg>
-<status status="PASS" starttime="20221127 12:18:13.681" endtime="20221127 12:18:14.937"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//label[text()= 'State']/following-sibling::input</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221127 12:18:14.937" endtime="20221127 12:18:16.564"/>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>//label[text()= 'State']/following-sibling::input</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20221127 12:18:16.565" endtime="20221127 12:18:17.591"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'State']/following-sibling::input</arg>
-<arg>Saudi Arabia</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:17.595" level="INFO">Typing text 'Saudi Arabia' into text field '//label[text()= 'State']/following-sibling::input'.</msg>
-<status status="PASS" starttime="20221127 12:18:17.593" endtime="20221127 12:18:19.222"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text() = ' Review the document ']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221127 12:18:19.229" level="INFO">Clicking element '//span[text() = ' Review the document ']'.</msg>
-<status status="PASS" starttime="20221127 12:18:19.225" endtime="20221127 12:18:20.624"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//label[text()= 'Type your name here']/following-sibling::input</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20221127 12:18:20.627" endtime="20221127 12:18:21.657"/>
-</kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<arg>//label[text()= 'Type your name here']/following-sibling::input</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<msg timestamp="20221127 12:18:23.092" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221127 12:18:23.094" level="FAIL">MoveTargetOutOfBoundsException: Message: (666, 903) is out of bounds of viewport width (1366) and height (643)
+<msg timestamp="20221209 22:15:23.030" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20221209 22:15:23.031" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites/demoapp/ApiDemos-debug.apk' does not exist or is not accessible
 Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.jsm:12:1
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.jsm:192:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.jsm:382:5
-assertInViewPort@chrome://remote/content/marionette/action.js:2125:11
-dispatch@chrome://remote/content/marionette/action.js:1017:21
-dispatch/pendingEvents&lt;@chrome://remote/content/marionette/action.js:1845:14
-dispatch@chrome://remote/content/marionette/action.js:1844:39
-dispatch/chainEvents&lt;@chrome://remote/content/marionette/action.js:1771:27
-dispatch@chrome://remote/content/marionette/action.js:1773:7
-performActions@chrome://remote/content/marionette/actors/MarionetteCommandsChild.jsm:470:23
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.jsm:145:31
-</msg>
-<status status="FAIL" starttime="20221127 12:18:21.659" endtime="20221127 12:18:24.161"/>
+UnknownError: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites/demoapp/ApiDemos-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\m.sameer\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Users\m.sameer\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</msg>
+<status status="FAIL" starttime="20221209 22:15:16.164" endtime="20221209 22:15:23.032"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Type your name here']/following-sibling::input</arg>
-<arg>Samir</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.164" endtime="20221127 12:18:24.164"/>
+<status status="FAIL" starttime="20221209 22:15:16.163" endtime="20221209 22:15:23.032"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text()='sign &amp; save']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.166" endtime="20221127 12:18:24.166"/>
+<kw name="Input Search Query">
+<arg>Hello World!</arg>
+<status status="NOT RUN" starttime="20221209 22:15:23.033" endtime="20221209 22:15:23.033"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//span[text()= ' Continue ']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.168" endtime="20221127 12:18:24.169"/>
+<kw name="Submit Search">
+<status status="NOT RUN" starttime="20221209 22:15:23.034" endtime="20221209 22:15:23.034"/>
 </kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<arg>//span[text()= ' Continue ']</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.170" endtime="20221127 12:18:24.170"/>
+<kw name="Search Query Should Be Matching">
+<arg>Hello World!</arg>
+<status status="NOT RUN" starttime="20221209 22:15:23.035" endtime="20221209 22:15:23.035"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text()= ' Continue ']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.177" endtime="20221127 12:18:24.178"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//label[text()= 'Education institute name']/following-sibling::input</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.180" endtime="20221127 12:18:24.181"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Education institute name']/following-sibling::input</arg>
-<arg>Samir</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.184" endtime="20221127 12:18:24.184"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'College']/following-sibling::input</arg>
-<arg>samirCollege</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.186" endtime="20221127 12:18:24.186"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Street']/following-sibling::input</arg>
-<arg>street123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.188" endtime="20221127 12:18:24.189"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Number of the building']/following-sibling::input</arg>
-<arg>4455</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.190" endtime="20221127 12:18:24.190"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'City']/following-sibling::input</arg>
-<arg>Riyadh</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.193" endtime="20221127 12:18:24.193"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'State / Province']/following-sibling::input</arg>
-<arg>Saudi Arabia</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.195" endtime="20221127 12:18:24.195"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'ZIP Code / Post Code']/following-sibling::input</arg>
-<arg>11332</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.196" endtime="20221127 12:18:24.196"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Education country']/following-sibling::input[1]</arg>
-<arg>Kingdom Saudi Arabia</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.197" endtime="20221127 12:18:24.197"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'v-list-item__mask']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.199" endtime="20221127 12:18:24.200"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//div[@class='maz-input__icon maz-flex right maz-align-center']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.201" endtime="20221127 12:18:24.201"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@placeholder='Search country']</arg>
-<arg>966</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.202" endtime="20221127 12:18:24.202"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>//input[@placeholder='Search country']</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.203" endtime="20221127 12:18:24.203"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@placeholder='Phone Number']</arg>
-<arg>0560288775</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.204" endtime="20221127 12:18:24.205"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Web address']/following-sibling::input</arg>
-<arg>https://www.google.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.206" endtime="20221127 12:18:24.206"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Educational level']/following-sibling::input[1]</arg>
-<arg>Bachelor</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.208" endtime="20221127 12:18:24.208"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'v-list-item__mask']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.210" endtime="20221127 12:18:24.210"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Major or Field of Study']/following-sibling::input[1]</arg>
-<arg>Programming And Computer Science</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.212" endtime="20221127 12:18:24.212"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'v-list-item__mask']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.213" endtime="20221127 12:18:24.213"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//label[text()= 'Start date of enrollment']/following-sibling::input</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.213" endtime="20221127 12:18:24.213"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>//*[@class = 'v-btn v-size--default v-date-picker-table__current v-btn--outlined theme--light accent--text']</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.214" endtime="20221127 12:18:24.214"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'v-btn v-size--default v-date-picker-table__current v-btn--outlined theme--light accent--text']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.215" endtime="20221127 12:18:24.215"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//label[text()= 'End date of enrollment']/following-sibling::input</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.215" endtime="20221127 12:18:24.215"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>//*[@class = 'v-btn v-size--default v-date-picker-table__current v-btn--outlined theme--light accent--text']</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.216" endtime="20221127 12:18:24.216"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'v-btn v-size--default v-date-picker-table__current v-btn--outlined theme--light accent--text']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.216" endtime="20221127 12:18:24.216"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//label[text()= 'Name on record']/following-sibling::input</arg>
-<arg>Samiir95</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.217" endtime="20221127 12:18:24.217"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//p[text()=' Certificates '])[1]/following::button[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.217" endtime="20221127 12:18:24.217"/>
-</kw>
-<kw name="Control Focus" library="AutoItLibrary">
-<arg>[CLASS:#32770; TITLE:Open]</arg>
-<arg>${EMPTY}</arg>
-<arg>[CLASSNN:Edit1]</arg>
-<doc>method ControlFocus</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.218" endtime="20221127 12:18:24.218"/>
-</kw>
-<kw name="Send" library="AutoItLibrary">
-<arg>C:\\Users\\m.sameer\\PycharmProjects\\Robot_POC\\TestSuites${/}uploads${/}Certificate.pdf</arg>
-<doc>method Send</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.218" endtime="20221127 12:18:24.218"/>
-</kw>
-<kw name="Control Click" library="AutoItLibrary">
-<arg>[CLASS:#32770; TITLE:Open]</arg>
-<arg>${EMPTY}</arg>
-<arg>&amp;Open</arg>
-<doc>method ControlClick</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.218" endtime="20221127 12:18:24.218"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>4</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.218" endtime="20221127 12:18:24.218"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text()= ' Continue ']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.219" endtime="20221127 12:18:24.219"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//p[text() = ' Verification ']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.219" endtime="20221127 12:18:24.219"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//span[text()= ' Continue ']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.220" endtime="20221127 12:18:24.220"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//p[ text()= ' Personal details ']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.220" endtime="20221127 12:18:24.220"/>
-</kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<arg>(//span[@class='rules text-start'])[1]/preceding::div[1]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.221" endtime="20221127 12:18:24.221"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//span[@class='rules text-start'])[1]/preceding::div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.221" endtime="20221127 12:18:24.221"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//span[@class='rules text-start'])[2]/preceding::div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.221" endtime="20221127 12:18:24.221"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//span[@class='rules text-start'])[3]/preceding::div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.222" endtime="20221127 12:18:24.222"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//span[@class='rules text-start'])[4]/preceding::div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.222" endtime="20221127 12:18:24.222"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>(//button[@type='submit'])[3]</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.222" endtime="20221127 12:18:24.222"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//button[@type='submit'])[3]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.223" endtime="20221127 12:18:24.223"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//*[@class = 'wpwl-button wpwl-button-pay']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.223" endtime="20221127 12:18:24.223"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>//*[@name='card.number']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.223" endtime="20221127 12:18:24.223"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'card.number']</arg>
-<arg>4111111111111111</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.223" endtime="20221127 12:18:24.223"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.224" endtime="20221127 12:18:24.224"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@class = 'wpwl-control wpwl-control-expiry']</arg>
-<arg>11/23</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.224" endtime="20221127 12:18:24.224"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'card.holder']</arg>
-<arg>Samir</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.224" endtime="20221127 12:18:24.224"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>//*[@name='card.cvv']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.225" endtime="20221127 12:18:24.225"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'card.cvv']</arg>
-<arg>123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.225" endtime="20221127 12:18:24.225"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.226" endtime="20221127 12:18:24.226"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.country']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.226" endtime="20221127 12:18:24.226"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.country']</arg>
-<arg>SA</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.227" endtime="20221127 12:18:24.227"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.state']</arg>
-<arg>Saudi Arabia</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.227" endtime="20221127 12:18:24.227"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.city']</arg>
-<arg>Riyadh</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.227" endtime="20221127 12:18:24.227"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.postcode']</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.227" endtime="20221127 12:18:24.227"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//*[@name = 'billing.street1']</arg>
-<arg>street 24</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.228" endtime="20221127 12:18:24.228"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@class = 'wpwl-button wpwl-button-pay']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.228" endtime="20221127 12:18:24.228"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,300)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.228" endtime="20221127 12:18:24.228"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>//*[@class= 'wpwl-target']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.229" endtime="20221127 12:18:24.229"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>//*[@name = 'submit']</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.229" endtime="20221127 12:18:24.229"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@name = 'submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.229" endtime="20221127 12:18:24.229"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.229" endtime="20221127 12:18:24.230"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//*[@class = 'text-h4 mb-4 text-center font-weight-medium']</arg>
-<arg>60s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.230" endtime="20221127 12:18:24.230"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//*[@class = 'text-h4 mb-4 text-center font-weight-medium']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" starttime="20221127 12:18:24.230" endtime="20221127 12:18:24.230"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221127 12:18:24.231" endtime="20221127 12:18:30.975"/>
-</kw>
-<status status="FAIL" starttime="20221127 12:17:36.990" endtime="20221127 12:18:30.977">MoveTargetOutOfBoundsException: Message: (666, 903) is out of bounds of viewport width (1366) and height (643)
+<status status="FAIL" starttime="20221209 22:15:16.163" endtime="20221209 22:15:23.036">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites/demoapp/ApiDemos-debug.apk' does not exist or is not accessible
 Stacktrace:
-RemoteError@chrome://remote/content/shared/RemoteError.jsm:12:1
-WebDriverError@chrome://remote/content/shared/webdriver/Errors.jsm:192:5
-MoveTargetOutOfBoundsError@chrome://remote/content/shared/webdriver/Errors.jsm:382:5
-assertInViewPort@chrome://remote/content/marionette/action.js:2125:11
-dispatch@chrome://remote/content/marionette/action.js:1017:21
-dispatch/pendingEvents&lt;@chrome://remote/content/marionette/action.js:1845:14
-dispatch@chrome://remote/content/marionette/action.js:1844:39
-dispatch/chainEvents&lt;@chrome://remote/content/marionette/action.js:1771:27
-dispatch@chrome://remote/content/marionette/action.js:1773:7
-performActions@chrome://remote/content/marionette/actors/MarionetteCommandsChild.jsm:470:23
-receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.jsm:145:31
-</status>
+UnknownError: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\Users\m.sameer\PycharmProjects\Robot_POC\TestSuites/demoapp/ApiDemos-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\m.sameer\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Users\m.sameer\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</status>
 </test>
-<status status="FAIL" starttime="20221127 12:17:36.563" endtime="20221127 12:18:30.984"/>
+<doc>Simple example using AppiumLibrary</doc>
+<status status="FAIL" starttime="20221209 22:15:15.833" endtime="20221209 22:15:23.038"/>
 </suite>
 <statistics>
 <total>
@@ -611,9 +60,10 @@ receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="VerificationRequest TestSuite">VerificationRequest TestSuite</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Appium">Appium</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20221209 22:15:23.030" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
