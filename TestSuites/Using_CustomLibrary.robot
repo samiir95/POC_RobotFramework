@@ -1,5 +1,7 @@
 *** Settings ***
-Library     Customlibrary
+Library    ../Libraries/SamirCalculator.py
+Library    ../Libraries/Taka.py       WITH NAME     abc
+
 
 *** Variables ***
 ${number1}         10
@@ -11,14 +13,18 @@ Test 1: Execute some mathematical operations
     [Tags]    Custom library
     Sum two numbers
     Subtract two numbers
-    multiply two numbers
+    Multiply two numbers
+    Run pytest
 
 *** Keywords ***
 Sum two numbers
-    Sum Numbers    ${number1}    ${number2}
+    Samir Sum Numbers          a=${number1}       b=${number2}
 
 Subtract two numbers
-    Subtract Numbers    ${number2}    ${number1}
+    Samir Subtract Numbers      a=${number2}    b=${number1}
 
 Multiply two numbers
-    Multiply Numbers    ${number1}    ${number2}
+    Samir Multiply Numbers      a=${number1}    b=${number2}
+
+Run pytest
+    abc.Test User Login

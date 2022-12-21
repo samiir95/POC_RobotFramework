@@ -10,6 +10,7 @@ ${Explicit_TimeOut}                 60s
 *** Keywords ***
 Click Login Button in Home Page
         Wait Until Element Is Enabled       ${login_Btn}        ${Explicit_Timeout}      #check if an element is enabled
+        Wait Until Element Is Visible       ${login_Btn}        ${Explicit_Timeout}
         Click Element       ${login_Btn}        #Click element
 
 Get Home Page Logo
